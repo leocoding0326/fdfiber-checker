@@ -32,6 +32,6 @@ main {
     font-family: "Noto Sans", sans-serif;
     width: 80vw;
     justify-content: center;
-    gap: .8rem;
+    gap: .5rem;
     flex-wrap: wrap;
 }
