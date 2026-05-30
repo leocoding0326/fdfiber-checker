@@ -14,3 +14,12 @@ main {
     text-align: center;
     font-family: "Google Sans Code", monospace;
 }
+
+/* Search Bar Styles */
+
+#search-bar {
+    font-size: 1.5rem;
+    font-family: "Noto Sans", sans-serif;
+    display: flex;
+    align-items: center;
+}
