@@ -1,7 +1,7 @@
 /* Universal Styles */
 
 body {
-    background-image: url(./media/images/search_background_shark.jpg);
+   background-color: #0E3B40;
 }
 
 main,
@@ -30,7 +30,7 @@ main {
 #search-bar {
     font-size: 1.5rem;
     font-family: "Noto Sans", sans-serif;
-    width: 100vw;
+    width: 90vw;
     justify-content: center;
     gap: .5rem;
     flex-wrap: wrap;
