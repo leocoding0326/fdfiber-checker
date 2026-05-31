@@ -8,7 +8,7 @@ Algorithm for autocomplete
 4. Limit addresses to 4
 */
 
-const autoComplete = (searchTerm) => {
+const autoComplete = (searchTerm, addresses) => {
     const normalized = searchTerm.toLowerCase();
 
     return addresses
