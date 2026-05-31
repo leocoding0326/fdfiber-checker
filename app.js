@@ -6,20 +6,30 @@ import addresses from '../database/database.js';
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions')//ul under search bar
 
-addressInput.addEventListener('input', (event) => {
-   const searchValue = event.target.value;
-   const matches = autoComplete(searchValue, addresses);
 
-   if(!searchValue.trim()){
-    suggestions.innerHTML = '';//Guard Statement
-    return;
-   }
+const autoCompleteElement = () => {
+    addressInput.addEventListener('input', (event) => {
+    const searchValue = event.target.value;
+    const matches = autoComplete(searchValue, addresses);
 
-   suggestions.innerHTML = '';
+    if(!searchValue.trim()){
+        suggestions.innerHTML = '';//Guard Statement
+        return;
+    }
 
-   matches.forEach(address => {
-        const li = document.createElement('li');
-        li.textContent = address;
-        suggestions.appendChild(li)
-   });
-})
+    suggestions.innerHTML = '';
+    
+    matches.forEach(address => {
+            const li = document.createElement('li');
+            li.textContent = address;
+
+            li.addEventListener('click', () => {//Adds suggested address to input
+                addressInput.value = address;
+                suggestions.innerHTML = ''; // clears suggestions once one li is clicked
+            })
+            suggestions.appendChild(li)
+    });
+    })
+}
+
+autoCompleteElement()
