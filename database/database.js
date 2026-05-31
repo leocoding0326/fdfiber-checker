@@ -1,4 +1,4 @@
-const addresses = [
+ const addresses = [
     {
         address: '847 N 21st St',
         mstId: '1234H',
@@ -77,3 +77,6 @@ const addresses = [
         cabinetConnection: 260,
     }
 ];
+
+//exports database
+export default addresses;
