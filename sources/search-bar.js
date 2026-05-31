@@ -10,10 +10,13 @@ Algorithm for autocomplete
 
 const autoComplete = (searchTerm) => {
     const normalized = searchTerm.toLowerCase();
-    
-    return addresses.filter((possibleAdress)=> 
-        possibleAdress.address.toLowerCase().includes(normalized)
-    );
+
+    return addresses
+        .filter((possibleAdress)=> 
+            typeof possibleAdress.address === 'string' &&
+            possibleAdress.address.toLowerCase().includes(normalized)
+        )
+        .slice(0, 5)
 };
 
 
