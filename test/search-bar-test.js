@@ -31,3 +31,38 @@ describe('autoComplete', () => {
      assert.strictEqual(result.length, 5)
     })
 });
+
+
+// User Input handler test
+
+describe('userInputHandler', () => {
+    it('compares user input to addresses of different objects inside an array and returns exact object match', () => {
+       const database = [
+        {
+        address: '847 N 21st St',
+        mstId: '1234H',
+        mstConnection: 2,
+        cabinet: 5,
+        cabinetConnection: 234,
+        },
+        {
+        address: '1023 W 5th Ave',
+        mstId: '5678A',
+        mstConnection: 1,
+        cabinet: 3,
+        cabinetConnection: 118,
+        },
+        {
+        address: '450 E Maple St',
+        mstId: '2233B',
+        mstConnection: 4,
+        cabinet: 2,
+        cabinetConnection: 87,
+        },
+       ];
+       const userChoice = '450 E maple St';
+       const expected = database[2];
+       const result = userInputHandler(userChoice, database);
+       assert.deepStrictEqual(result[0], expected);
+    });
+})
