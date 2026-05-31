@@ -1,0 +1,23 @@
+{
+  "name": "fdfiber-checker",
+  "version": "1.0.0",
+  "description": "A software to check connections in homes",
+  "homepage": "https://github.com/leocoding0326/fdfiber-checker#readme",
+  "bugs": {
+    "url": "https://github.com/leocoding0326/fdfiber-checker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leocoding0326/fdfiber-checker.git"
+  },
+  "license": "ISC",
+  "author": "Leo G",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.6"
+  }
+}
