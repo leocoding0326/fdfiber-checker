@@ -69,17 +69,27 @@ main {
 }
 
 #suggestions {
-    width: 70%;
+    width: 60%;
     margin: .25rem;
     padding: 0;
     list-style: none;
     background: white;
-    color: black;
+    color: darkgray;
     border-radius: 0 0 15px 15px;
 }
 
 #suggestions li {
     padding: 1rem;
+}
+
+#suggestions li:hover {
+    background-color: #679FA6;
+    color: white;
+}
+
+#suggestions li:active {
+    background-color: white;
+    color: darkgray;
 }
 
 #suggestions li:not(:last-child) {
