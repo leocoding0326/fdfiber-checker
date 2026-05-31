@@ -28,12 +28,10 @@ main {
 /* Search Bar Styles */
 
 #search-bar {
-    font-size: 1.5rem;
-    font-family: "Noto Sans", sans-serif;
-    width: 90vw;
-    justify-content: center;
-    gap: .5rem;
-    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 #address-input,
@@ -44,9 +42,8 @@ main {
 }
 
 #address-input {
-    min-width: 60%;
+    flex: 1;
     padding: .5rem;
-    position: relative;
 }
 
 #address-input:focus {
@@ -60,5 +57,37 @@ main {
     color: white;
 }
 
-/* Suggestions Style
+/* Suggestions Style */
 
+.input-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: .5rem;
+    flex-wrap: wrap-reverse;
+}
+
+#suggestions {
+    width: 70%;
+    margin: .25rem;
+    padding: 0;
+    list-style: none;
+    background: white;
+    color: black;
+    border-radius: 0 0 15px 15px;
+}
+
+#suggestions li {
+    margin: 1rem;
+}
+
+
+/*Responsiviness*/
+
+@media (max-width: 450px) {
+    #input-button,
+    #suggestions {
+        width: 100%;
+    }
+}
