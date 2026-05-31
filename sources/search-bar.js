@@ -16,7 +16,7 @@ const autoComplete = (searchTerm) => {
             typeof possibleAdress.address === 'string' &&
             possibleAdress.address.toLowerCase().includes(normalized)
         )
-        .slice(0, 5)
+        .slice(0, 5);
 };
 
 /* Algorithm for search bar:
@@ -33,4 +33,6 @@ const userInputHandler = (userInput) => {
     return addresses.filter((currentAddress) => {
         userInput.toLowerCase() === currentAddress.address.toLowerCase();
     });
-}
+};
+
+export {autoComplete, userInputHandler};
