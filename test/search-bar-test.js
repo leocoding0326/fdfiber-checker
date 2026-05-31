@@ -9,7 +9,8 @@ describe('autoComplete', () => {
         const dataBase = [
             {address: 'New York'},
             {address: 'New Hampshire'},
-            {address: 'Boston'}
+            {address: 'Boston'},
+            {address: 1234}
     ];
         const result = autoComplete('new', dataBase);
         const expected = [
@@ -27,7 +28,8 @@ describe('autoComplete', () => {
             {address: 'Newman'},
             {address: 'New Mexico'},
             {address: 'Newson'},
-            {address: 'New Zeland'}
+            {address: 'New Zeland'},
+            {address: 1234}
     ];
     const result = autoComplete('new', dataBase);
      assert.strictEqual(result.length, 5)
