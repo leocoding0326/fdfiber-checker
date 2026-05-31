@@ -4,8 +4,8 @@ Algorithm for autocomplete
 
 1. Takes user input
 2. Checks wich addresses in the database includes what the user is writing
-3. Returns addresses
-4. Limit addresses to 4
+3. Returns only addresses
+4. Limit addresses to 5
 */
 
 const autoComplete = (searchTerm, addresses) => {

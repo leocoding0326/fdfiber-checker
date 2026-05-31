@@ -1,6 +1,5 @@
 import assert from 'node:assert';
 import { autoComplete, userInputHandler } from '../sources/search-bar.js';
-import addresses from '../database/database.js';
 
 //AutoComplete Test
 
