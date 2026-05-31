@@ -19,10 +19,6 @@ const autoComplete = (searchTerm) => {
         .slice(0, 5)
 };
 
-
-
-
-
 /* Algorithm for search bar:
 1. Receives a string from the user input;
 2. Makes the string all lowercase
