@@ -60,9 +60,67 @@ describe('userInputHandler', () => {
         cabinetConnection: 87,
         },
        ];
-       const userChoice = '450 E maple St';
+       const userChoice = '450 E Maple St';
        const expected = database[2];
        const result = userInputHandler(userChoice, database);
        assert.deepStrictEqual(result[0], expected);
     });
+    it('works when casing is different', () => {
+        const database = [
+        {
+        address: '847 N 21st St',
+        mstId: '1234H',
+        mstConnection: 2,
+        cabinet: 5,
+        cabinetConnection: 234,
+        },
+        {
+        address: '1023 W 5th Ave',
+        mstId: '5678A',
+        mstConnection: 1,
+        cabinet: 3,
+        cabinetConnection: 118,
+        },
+        {
+        address: '450 E Maple St',
+        mstId: '2233B',
+        mstConnection: 4,
+        cabinet: 2,
+        cabinetConnection: 87,
+        },
+       ];
+       const userChoice = '450 e maple st';
+       const expected = database[2];
+       const result = userInputHandler(userChoice, database);
+       assert.deepStrictEqual(result[0], expected);
+    })
+    it('returns an empty array when no match fund', () => {
+         const database = [
+        {
+        address: '847 N 21st St',
+        mstId: '1234H',
+        mstConnection: 2,
+        cabinet: 5,
+        cabinetConnection: 234,
+        },
+        {
+        address: '1023 W 5th Ave',
+        mstId: '5678A',
+        mstConnection: 1,
+        cabinet: 3,
+        cabinetConnection: 118,
+        },
+        {
+        address: '450 E Maple St',
+        mstId: '2233B',
+        mstConnection: 4,
+        cabinet: 2,
+        cabinetConnection: 87,
+        },
+       ];
+       const userChoice = '888 mape st';
+       const expected = [];
+       const result = userInputHandler(userChoice, database);
+       assert.deepStrictEqual(result, expected);
+    })
 })
