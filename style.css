@@ -46,6 +46,7 @@ main {
 #address-input {
     min-width: 60%;
     padding: .5rem;
+    position: relative;
 }
 
 #address-input:focus {
@@ -58,3 +59,6 @@ main {
     background-color: #699D9D;
     color: white;
 }
+
+/* Suggestions Style
+

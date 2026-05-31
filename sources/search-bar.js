@@ -20,7 +20,9 @@ const autoComplete = (searchTerm, addresses) => {
         .slice(0, 5);
 };
 
-/* Algorithm for search bar:
+/* 
+Algorithm for search bar:
+
 1. Receives a string from the user input;
 2. Makes the string all lowercase
 3. makes the string from database lowercase as well
