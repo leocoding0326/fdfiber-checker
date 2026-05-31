@@ -79,7 +79,11 @@ main {
 }
 
 #suggestions li {
-    margin: 1rem;
+    padding: 1rem;
+}
+
+#suggestions li:not(:last-child) {
+    border-bottom: 1px dotted lightgray;
 }
 
 
