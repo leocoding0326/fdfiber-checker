@@ -7,8 +7,7 @@ import addresses from "../database/database.js";//Imports database
 4. filters the database until a match is fund
 5. if not fund return an empty string
 6. if fund return the strings
-7. Filters the database to find cabinet & mst for the address;
-8. Push the info to the main js to show in the DOM.
+7. Push the info to the main js to show in the DOM.
 */
 
 const userInputHandler = (userInput) => {
