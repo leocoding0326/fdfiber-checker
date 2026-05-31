@@ -13,10 +13,7 @@ describe('autoComplete', () => {
             {address: 1234}
     ];
         const result = autoComplete('new', dataBase);
-        const expected = [
-            {address: 'New York'},
-            {address: 'New Hampshire'},
-        ];
+        const expected = ['New York', 'New Hampshire'];
         assert.deepStrictEqual(result, expected);
     });
     

@@ -12,10 +12,11 @@ const autoComplete = (searchTerm, addresses) => {
     const normalized = searchTerm.toLowerCase();
 
     return addresses
-        .filter((possibleAdress)=> 
-            typeof possibleAdress.address === 'string' &&
-            possibleAdress.address.toLowerCase().includes(normalized)
+        .filter((possibleAddress)=> 
+            typeof possibleAddress.address === 'string' &&
+            possibleAddress.address.toLowerCase().includes(normalized)
         )
+        .map(possibleAddress => possibleAddress.address)
         .slice(0, 5);
 };
 
@@ -30,9 +31,8 @@ const autoComplete = (searchTerm, addresses) => {
 */
 
 const userInputHandler = (userInput, addresses) => {
-    return addresses.filter((currentAddress) => {
-        userInput.toLowerCase() === currentAddress.address.toLowerCase();
-    });
+    return addresses.filter((currentAddress) =>
+        userInput.toLowerCase() === currentAddress.address.toLowerCase());
 };
 
 export {autoComplete, userInputHandler};
