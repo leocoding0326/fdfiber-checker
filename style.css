@@ -1,3 +1,9 @@
+/* Hide Class */
+
+.hide {
+    display: none;
+}
+
 /* Universal Styles */
 
 body {
@@ -60,6 +66,10 @@ main {
     padding: .5rem 1rem;
 }
 
+.search-btn:hover {
+    animation: fa-beat 1s;
+}
+
 .clear-btn {
     background-color: white;
     padding: 0;
@@ -68,6 +78,10 @@ main {
     position: absolute;
     right: 0;
     margin-right: .5rem;
+}
+
+.clear-btn:active {
+    color: black;
 }
 
 /* Suggestions Style */
@@ -111,7 +125,6 @@ main {
 /*Responsiviness*/
 
 @media (max-width: 450px) {
-    #input-button,
     #suggestions {
         width: 100%;
     }
