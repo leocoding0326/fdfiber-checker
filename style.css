@@ -34,14 +34,11 @@ main {
     align-items: stretch;
 }
 
-#address-input,
-#input-button {
+#address-input
+ {
     border-radius: 10px;
     border: none;
     font-size: 1.2rem;
-}
-
-#address-input {
     flex: 1;
     padding: .5rem;
 }
@@ -51,10 +48,17 @@ main {
     box-shadow: 0 0 5px #699D9D;
 }
 
-#input-button {
-    padding: .5rem 1rem;
-    background-color: #699D9D;
-    color: white;
+.search-btn,
+.clear-btn {
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+
+.search-btn {
+    background-color:#679FA6;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    padding: 0.5rem .8rem;
 }
 
 /* Suggestions Style */
@@ -64,8 +68,6 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: .5rem;
-    flex-wrap: wrap-reverse;
 }
 
 #suggestions {
