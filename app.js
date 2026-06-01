@@ -37,14 +37,16 @@ const autoCompleteElement = () => {
 const hideElement = (element) => {
     element.addEventListener('click', () => {
         element.classList.add('hidden')
-    })
-}
+    });
+};
 
 //toggle to remove clear button when input is empty
 
-const clearBtnElementToggle = () => {
+addressInput.addEventListener('input', () => {
+    clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
+});
 
-}
+
 
 
 autoCompleteElement()
