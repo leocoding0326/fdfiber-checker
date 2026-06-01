@@ -17,9 +17,8 @@ const autoCompleteElement = () => {
         suggestions.innerHTML = '';//Guard Statement
         return;
     }
-
     suggestions.innerHTML = '';
-    
+
     matches.forEach(address => {
             const li = document.createElement('li');
             li.textContent = address;
@@ -42,11 +41,14 @@ const hideElement = (element) => {
 
 //toggle to remove clear button when input is empty
 
-addressInput.addEventListener('input', () => {
-    clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
-});
-
-
-
+const clearBtnElement = () =>{    
+    addressInput.addEventListener('input', () => {
+        clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
+    });
+    clearBtn.addEventListener('click', () => {
+        suggestions.innerHTML = '';
+    })
+}
 
 autoCompleteElement()
+clearBtnElement()
