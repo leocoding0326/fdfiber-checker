@@ -5,6 +5,7 @@ import addresses from '../database/database.js';
 
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions')//ul under search bar
+const clearBtn = document.querySelector('.clear-btn')
 
 
 const autoCompleteElement = () => {
@@ -31,5 +32,19 @@ const autoCompleteElement = () => {
     });
     })
 }
+
+//Hide element on click
+const hideElement = (element) => {
+    element.addEventListener('click', () => {
+        element.classList.add('hidden')
+    })
+}
+
+//toggle to remove clear button when input is empty
+
+const clearBtnElementToggle = () => {
+
+}
+
 
 autoCompleteElement()
