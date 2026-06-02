@@ -110,6 +110,7 @@ main {
 #suggestions li:hover {
     background-color: #679FA6;
     color: white;
+    border: 15px;
 }
 
 #suggestions li:active {
