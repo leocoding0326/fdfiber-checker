@@ -50,5 +50,17 @@ const clearBtnElement = () =>{
     })
 }
 
+/*
+Software Algorithm:
+1. User Types an address in input,
+2. User clicks search button,
+    2-1. If input is empty thrhow error;
+    2-2. If address not valid throw error;
+3. Input Value gets stored on a variable;
+4. Variable gets compared vs database address;
+    4-1. If not address fund throw an error asking to try a different address or ask admin to add it.
+5. If a result is fund render results in UI;
+*/
+
 autoCompleteElement()
 clearBtnElement()
