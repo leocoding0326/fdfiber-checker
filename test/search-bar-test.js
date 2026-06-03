@@ -157,5 +157,35 @@ describe('matchingAddress', () => {
        const result = matchingAddress(input, database);
 
        assert.deepStrictEqual(result, expected)
-    })
+    });
+        it ('returns right value no matter capitalization', () => {
+        const database = [
+        {
+        address: '847 N 21st St',
+        mstId: '1234H',
+        mstConnection: 2,
+        cabinet: 5,
+        cabinetConnection: 234,
+        },
+        {
+        address: '1023 W 5th Ave',
+        mstId: '5678A',
+        mstConnection: 1,
+        cabinet: 3,
+        cabinetConnection: 118,
+        },
+        {
+        address: '450 E Maple St',
+        mstId: '2233B',
+        mstConnection: 4,
+        cabinet: 2,
+        cabinetConnection: 87,
+        },
+       ];
+       const input = '847 n 21st st';
+       const expected = true;
+       const result = matchingAddress(input, database);
+
+       assert.deepStrictEqual(result, expected)
+    });
 })

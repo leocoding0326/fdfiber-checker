@@ -41,7 +41,7 @@ const userInputHandler = (userInput, addresses) => {
 //Check if there is a matching address
 
 const matchingAddress = (input, database) => {
-    return database.some(profile => profile.address === input)
+    return database.some(profile => profile.address.toLowerCase() === input.toLowerCase())
 } 
 
 export {autoComplete, userInputHandler, matchingAddress};
