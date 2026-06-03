@@ -11,7 +11,7 @@ Software Algorithm:
 */
 
 
-import {autoComplete, userInputHandler} from './sources/search-bar.js'
+import {autoComplete, matchingAddress, userInputHandler} from './sources/search-bar.js'
 import addresses from '../database/database.js';
 
 //Generate the array of suggested addresses as the user types
@@ -67,11 +67,18 @@ const clearBtnElement = () =>{
         suggestions.innerHTML = '';
     })
 }
-
+//Shows error message on screen
 const showError = (message) => {
     errorMsg.textContent = message;
     showElement(errorMsg)
 }
+
+const inputValidation = (emptyInput, input) => {
+    const checkMatchingAddress = matchingAddress(input, addresses);
+    if (emptyInput === "" || !checkMatchingAddress) {
+        showError('Please enter a valid address');
+    };
+};
 
 autoCompleteElement()
 clearBtnElement()
