@@ -44,4 +44,4 @@ const matchingAddress = (input, database) => {
     return database.some(profile => profile.address === input)
 } 
 
-export {autoComplete, userInputHandler};
+export {autoComplete, userInputHandler, matchingAddress};
