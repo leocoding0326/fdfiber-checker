@@ -27,6 +27,8 @@ const autoCompleteElement = () => {
     const searchValue = event.target.value;
     const matches = autoComplete(searchValue, addresses);
 
+    inputValidation(searchValue) // validates user input
+
     if(!searchValue.trim()){
         suggestions.innerHTML = '';//Guard Statement
         return;
@@ -40,6 +42,7 @@ const autoCompleteElement = () => {
             li.addEventListener('click', () => {//Adds suggested address to input
                 addressInput.value = address;
                 suggestions.innerHTML = ''; // clears suggestions once one li is clicked
+                errorMsg.textContent = ''; // clears error message
             })
             suggestions.appendChild(li)
     });
@@ -73,11 +76,12 @@ const showError = (message) => {
     showElement(errorMsg)
 }
 
-const inputValidation = (emptyInput, input) => {
+//Validates user input to display error only when needed
+const inputValidation = (input) => {
     const checkMatchingAddress = matchingAddress(input, addresses);
-    if (emptyInput === "" || !checkMatchingAddress) {
+    if (!checkMatchingAddress) {
         showError('Please enter a valid address');
-    };
+    } 
 };
 
 autoCompleteElement()

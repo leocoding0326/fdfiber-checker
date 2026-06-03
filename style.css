@@ -106,6 +106,7 @@ main {
     background: white;
     color: darkgray;
     border-radius: 0 0 15px 15px;
+    align-self: flex-start;
 }
 
 #suggestions li {
