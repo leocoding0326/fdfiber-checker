@@ -117,12 +117,13 @@ main {
     margin: .25rem;
     padding: 0;
     list-style: none;
-    background: #FCF8F7;
+    background: whitesmoke;
     color: darkgray;
     border-radius: 0 0 15px 15px;
     box-shadow: 0 0 10px;
     align-self: flex-end;
     animation: slideDown .1s ease-in;
+    border: lightgray;
 }
 
 #suggestions li {
