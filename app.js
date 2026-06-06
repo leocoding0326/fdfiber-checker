@@ -26,7 +26,6 @@ const autoCompleteElement = () => {
     addressInput.addEventListener('input', (event) => {
     const searchValue = event.target.value;
     const matches = autoComplete(searchValue, addresses);
-
      // validates user input
 
     if(!searchValue.trim()){
@@ -76,13 +75,14 @@ const showError = (message) => {
 }
 
 //Validates user input to display error only when needed
-const inputValidation = () => {
+// //Will rework on it once Google Maps API is added 
+/*const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = matchingAddress(valid, addresses);
     if(!isValid){
         showError('Please enter a valid address')
     };
-};
+};*/
 
 autoCompleteElement()
 clearBtnElement()
