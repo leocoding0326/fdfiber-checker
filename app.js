@@ -30,8 +30,9 @@ const autoCompleteElement = () => {
 
     if(!searchValue.trim()){
         suggestions.innerHTML = '';//Guard Statement
+        hideElement(suggestions);
         return;
-    }
+    } else (showElement(suggestions))
     suggestions.innerHTML = '';
 
     matches.forEach(address => {
@@ -55,6 +56,7 @@ const hideElement = (element) => {
 //Show element
 const showElement = (element) => {
      element.classList.remove('hidden')
+     console.log("remove class")
 };
 
 
