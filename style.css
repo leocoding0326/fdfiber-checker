@@ -46,10 +46,10 @@ main {
 
 #address-input
  {
-    border-radius: 0 10px 10px 0;
     flex: 1;
     padding: .5rem;
     box-shadow: 2px 1px 5px;
+     border-radius: 15px;
 }
 
 #address-input:focus {
@@ -66,9 +66,9 @@ main {
 
 .search-btn {
     background-color:#E33F27;
-    border-radius: 15px 0 0 15px;
-    padding: .5rem 1rem;
+    padding: .6rem .7rem;
     box-shadow: 2px 1px 5px;
+    border-radius: 100%;
 }
 
 .clear-btn {
@@ -96,6 +96,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: .5rem;
 }
 
 #suggestions {
