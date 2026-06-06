@@ -9,7 +9,9 @@
 body {
    font-family: "Google Sans Code", monospace;
    color: #332B2A;
-   background-color: #EFDCD9;
+   background-image: url(./media/images/search-file-background.png);
+   background-position: center;
+   background-size: auto;
 }
 
 main,
@@ -32,7 +34,7 @@ main {
 }
 
 .titles h1 {
-    color:#7D4E47;
+    color:#436360;
 }
 
 /* Search Bar Styles */
@@ -54,7 +56,7 @@ main {
 
 #address-input:focus {
     outline: none;
-    box-shadow: 0 0 5px #699D9D;
+    box-shadow: 0 0 5px #E33F27;
 }
 
 .search-btn,
