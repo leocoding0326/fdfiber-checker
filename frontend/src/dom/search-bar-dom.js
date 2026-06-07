@@ -42,6 +42,7 @@ const autoCompleteElement = () => {
             li.addEventListener('click', () => {//Adds suggested address to input
                 addressInput.value = address;
                 suggestions.innerHTML = ''; // clears suggestions once one li is clicked
+                hideElement(suggestions)
             })
             suggestions.appendChild(li)
     });
