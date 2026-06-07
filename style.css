@@ -9,33 +9,16 @@
     }
 }
 
-/* Hide Class */
-
-.hidden {
-    display: none;
-}
-
 /* Universal Styles */
 
-body {
-   font-family: "Google Sans Code", monospace;
-   color: #332B2A;
+.main-page-body {
    background-image: url(./media/images/search-file-background.png);
-   background-position: center;
-   background-size: auto;
 }
 
 main,
 #search-bar {
     display: flex;
     align-items: center;
-}
-
-main {
-    margin: 0;
-    min-height: 80vh;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 
 /* Titles Styling */
@@ -60,14 +43,7 @@ main {
 #address-input
  {
     flex: 1;
-    padding: .5rem;
     box-shadow: 2px 1px 5px;
-     border-radius: 15px;
-}
-
-#address-input:focus {
-    outline: none;
-    box-shadow: 0 0 5px #E33F27;
 }
 
 .search-btn,
@@ -115,15 +91,14 @@ main {
 #suggestions {
     width: 80%;
     margin: .25rem;
-    padding: 0;
     list-style: none;
     background: whitesmoke;
     color: darkgray;
     border-radius: 0 0 15px 15px;
+    border: lightgray;
     box-shadow: 0 0 10px;
     align-self: flex-end;
     animation: slideDown .1s ease-in;
-    border: lightgray;
 }
 
 #suggestions li {
@@ -153,16 +128,6 @@ main {
     border-radius: 15px;
     box-shadow: 0px 0px 4px;
     width: 80%;
-}
-
-/*Error Message*/
-
-.error-msg {
-    color: #E33F27;
-    margin-left: 1rem;
-    width: 100%;
-    text-align: left;
-    font-size: clamp(.7rem, 1vw, 1rem);
 }
 
 /*Responsiviness*/

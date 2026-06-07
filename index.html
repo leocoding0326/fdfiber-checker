@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!--File Links-->
+    <link rel="stylesheet" href="./base.css">
     <link rel="stylesheet" href="./style.css">
     <script type= 'module' src=./app.js></script>
     <!--Font Awesome-->
@@ -16,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fort Dodge Fiber Address Checker</title>
 </head>
-<body>
+<body class="main-page-body">
     <main>
         <div class="titles">
             <h1>Fort Dodge Fiber Address Checker</h1>
@@ -26,7 +27,7 @@
                 <p class="error-msg"></p>
                 <div class="input-wrap">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" id="address-input" placeholder="Enter Address" aria-label="check-address">
+                    <input type="text" id="address-input" class="input-style" placeholder="Enter Address" aria-label="check-address">
                     <button class="clear-btn hidden"><i class="fa-solid fa-circle-xmark"></i></button>
                 </div>
                 <ul id="suggestions" class="hidden">
