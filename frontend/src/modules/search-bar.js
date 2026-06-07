@@ -1,4 +1,4 @@
-import addresses from "./database";//Imports database
+import addresses from "./database.js";//Imports database
 /*
 Algorithm for autocomplete
 
