@@ -17,9 +17,10 @@ import addresses from '../modules/database.js';
 //Generate the array of suggested addresses as the user types
 
 const addressInput = document.getElementById('address-input');//Search Bar
-const suggestions = document.getElementById('suggestions')//ul under search bar
-const clearBtn = document.querySelector('.clear-btn')//clear btn element
-const errorMsg = document.querySelector('.error-msg') //error message element
+const suggestions = document.getElementById('suggestions');//ul under search bar
+const clearBtn = document.querySelector('.clear-btn');//clear btn element
+const errorMsg = document.querySelector('.error-msg'); //error message element
+const displayResult = document.querySelector('.info-display');
 
 
 const autoCompleteElement = () => {
@@ -86,6 +87,18 @@ const showError = (message) => {
         showError('Please enter a valid address')
     };
 };*/
+
+const resultHandler = () => {
+    const result = userInputHandler(addressInput, addresses);
+    displayResult.innerHTML = `
+    <h3>Address: ${result.address}</h3>
+    <p>Cabinet Number: ${result.cabinet}</p>
+    <p>Cabinet Connection: ${result.cabinetConnection}</p>
+    <p>MST: ${result.mstId}</p>
+    <p>MST Connection: ${result.mstConnection}</p>
+    `
+}
+
 
 autoCompleteElement()
 clearBtnElement()
