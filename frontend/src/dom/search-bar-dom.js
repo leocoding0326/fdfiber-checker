@@ -11,8 +11,8 @@ Software Algorithm:
 */
 
 
-import {autoComplete, matchingAddress, userInputHandler} from './sources/search-bar.js'
-import addresses from '../database/database.js';
+import {autoComplete, matchingAddress, userInputHandler} from '../modules/search-bar.js'
+import addresses from '../modules/database.js';
 
 //Generate the array of suggested addresses as the user types
 
