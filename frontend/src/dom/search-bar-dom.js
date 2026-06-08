@@ -26,29 +26,37 @@ const displayResult = document.querySelector('.info-display');
 const autoCompleteElement = () => {
     addressInput.addEventListener('input', (event) => {
     const searchValue = event.target.value;
-    const matches = autoComplete(searchValue, addresses);
+    const valid = autoComplete(searchValue, addresses);
      // validates user input
-
-    if(!searchValue.trim()){
+    if(!searchValue.trim() || valid.length === 0){
         suggestions.innerHTML = '';//Guard Statement
         hideElement(suggestions);
         return;
-    } else (showElement(suggestions))
+    }
+    (showElement(suggestions))
     suggestions.innerHTML = '';
-
-    matches.forEach(address => {
-            const li = document.createElement('li');
-            li.textContent = address;
-
-            li.addEventListener('click', () => {//Adds suggested address to input
-                addressInput.value = address;
-                suggestions.innerHTML = ''; // clears suggestions once one li is clicked
-                hideElement(suggestions)
-            })
-            suggestions.appendChild(li)
+    addSuggestionsLi(searchValue)
     });
-    })
 }
+
+
+//Adds the matches to the suggestion ul
+const addSuggestionsLi = (searchValue) => {
+    const matches = autoComplete(searchValue, addresses);
+     matches.forEach(address => {
+        const li = document.createElement('li');
+        li.textContent = address;
+
+        li.addEventListener('click', () => {//Adds suggested address to input
+            addressInput.value = address;
+            suggestions.innerHTML = ''; // clears suggestions once one li is clicked
+            hideElement(suggestions)
+        })
+        suggestions.appendChild(li)
+    });
+}
+
+
 
 //Hide element
 const hideElement = (element) => {
@@ -72,11 +80,6 @@ const clearBtnElement = () =>{
         addressInput.value = '';
     })
 }
-//Shows error message on screen
-const showError = (message) => {
-    errorMsg.textContent = message;
-    showElement(errorMsg)
-}
 
 //Validates user input to display error only when needed
 // //Will rework on it once Google Maps API is added 
@@ -86,8 +89,15 @@ const showError = (message) => {
     if(!isValid){
         showError('Please enter a valid address')
     };
-};*/
+};
 
+//Shows error message on screen
+const showError = (message) => {
+    errorMsg.textContent = message;
+    showElement(errorMsg)
+}*/
+
+//Displays the results in the DOM
 const resultHandler = () => {
     const result = userInputHandler(addressInput, addresses);
     displayResult.innerHTML = `
