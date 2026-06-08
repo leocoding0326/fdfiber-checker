@@ -20,9 +20,9 @@ const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
 const clearBtn = document.querySelector('.clear-btn');//clear btn element
 const errorMsg = document.querySelector('.error-msg'); //error message element
-const displayResult = document.querySelector('.info-display');
+const displayResult = document.querySelector('.info-display');//Display element under search bar
 
-
+//Shows Matches as user type in
 const autoCompleteElement = () => {
     addressInput.addEventListener('input', (event) => {
     const searchValue = event.target.value;
@@ -37,7 +37,7 @@ const autoCompleteElement = () => {
     suggestions.innerHTML = '';
     addSuggestionsLi(searchValue)
     });
-}
+};
 
 
 //Adds the matches to the suggestion ul
@@ -50,13 +50,33 @@ const addSuggestionsLi = (searchValue) => {
         li.addEventListener('click', () => {//Adds suggested address to input
             addressInput.value = address;
             suggestions.innerHTML = ''; // clears suggestions once one li is clicked
-            hideElement(suggestions)
+            hideElement(suggestions);
         })
-        suggestions.appendChild(li)
+        suggestions.appendChild(li);
     });
+};
+
+//toggle to remove clear button when input is empty
+const clearBtnElement = () =>{    
+    addressInput.addEventListener('input', () => {
+        clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
+    });
+    clearBtn.addEventListener('click', () => {
+        addressInput.value = '';
+    });
+};
+
+//Displays the results in the DOM
+const resultHandler = () => {
+    const result = userInputHandler(addressInput, addresses);
+    displayResult.innerHTML = `
+    <h3>Address: ${result.address}</h3>
+    <p>Cabinet Number: ${result.cabinet}</p>
+    <p>Cabinet Connection: ${result.cabinetConnection}</p>
+    <p>MST: ${result.mstId}</p>
+    <p>MST Connection: ${result.mstConnection}</p>
+    `
 }
-
-
 
 //Hide element
 const hideElement = (element) => {
@@ -68,18 +88,6 @@ const showElement = (element) => {
      element.classList.remove('hidden')
      console.log("remove class")
 };
-
-
-//toggle to remove clear button when input is empty
-
-const clearBtnElement = () =>{    
-    addressInput.addEventListener('input', () => {
-        clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
-    });
-    clearBtn.addEventListener('click', () => {
-        addressInput.value = '';
-    })
-}
 
 //Validates user input to display error only when needed
 // //Will rework on it once Google Maps API is added 
@@ -96,18 +104,6 @@ const showError = (message) => {
     errorMsg.textContent = message;
     showElement(errorMsg)
 }*/
-
-//Displays the results in the DOM
-const resultHandler = () => {
-    const result = userInputHandler(addressInput, addresses);
-    displayResult.innerHTML = `
-    <h3>Address: ${result.address}</h3>
-    <p>Cabinet Number: ${result.cabinet}</p>
-    <p>Cabinet Connection: ${result.cabinetConnection}</p>
-    <p>MST: ${result.mstId}</p>
-    <p>MST Connection: ${result.mstConnection}</p>
-    `
-}
 
 
 autoCompleteElement()
