@@ -86,7 +86,6 @@ const hideElement = (element) => {
 //Show element
 const showElement = (element) => {
      element.classList.remove('hidden')
-     console.log("remove class")
 };
 
 //Validates user input to display error only when needed
