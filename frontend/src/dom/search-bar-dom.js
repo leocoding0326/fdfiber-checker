@@ -11,7 +11,7 @@ Software Algorithm:
 */
 
 
-import {autoComplete, matchingAddress, userInputHandler} from '../modules/search-bar.js'
+import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
 
 //Generate the array of suggested addresses as the user types
@@ -93,7 +93,7 @@ const showElement = (element) => {
 // //Will rework on it once Google Maps API is added 
 /*const inputValidation = () => {
     const valid = addressInput.value;
-    const isValid = matchingAddress(valid, addresses);
+    const isValid = addressExist(valid, addresses);
     if(!isValid){
         showError('Please enter a valid address')
     };

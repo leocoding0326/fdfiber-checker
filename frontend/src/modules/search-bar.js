@@ -39,9 +39,9 @@ const userInputHandler = (userInput, addresses) => {
 
 //Check if there is a matching address
 
-const matchingAddress = (input, database) => {
+const addressExist = (input, database) => {
     return database.some(profile => profile.address.toLowerCase() === input.toLowerCase());
 }; 
 
-export {autoComplete, userInputHandler, matchingAddress};
+export {autoComplete, userInputHandler, addressExist};
 
