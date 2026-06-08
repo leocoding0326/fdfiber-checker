@@ -9,8 +9,18 @@ Address checker for a Fiber company to show cab number and connections as well a
 
 *2026-06-08*
 [ ] Write code block to push info into DOM display elements.
+[ ] Fix error handler to run on search button click
+
+*2026-06-09*
 [ ] Add a clear button that clears results and Input for the user to start over.
 [ ] Start Designing Log In page Html.
+
+*2026-06-10*
+[ ] Add animation to the suggestion list after the user clicks on it.
+[ ] Add animation to the display element when user do a search
+[ ] Start Designing Log In page Html.
+
+
 
 
 ## Directory Tree Format

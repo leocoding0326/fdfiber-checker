@@ -22,6 +22,7 @@ const clearBtn = document.querySelector('.clear-btn');//clear btn element
 const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
 
+
 //Shows Matches as user type in
 const autoCompleteElement = () => {
     addressInput.addEventListener('input', (event) => {

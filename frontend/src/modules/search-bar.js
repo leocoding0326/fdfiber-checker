@@ -32,7 +32,6 @@ Algorithm for search bar:
 7. Push the info to the main js to show in the DOM.
 */
 
-
 const userInputHandler = (userInput, addresses) => {
     return addresses.filter((currentAddress) =>
         userInput.toLowerCase() === currentAddress.address.toLowerCase());
