@@ -14,8 +14,6 @@ Software Algorithm:
 import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
 
-//Generate the array of suggested addresses as the user types
-
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
 const clearBtn = document.querySelector('.clear-btn');//clear btn element
@@ -24,30 +22,8 @@ const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
 
 
-
-
-//Shows Matches as user type in
-const autoCompleteElement = () => {
-    addressInput.addEventListener('input', (event) => {
-    const searchValue = event.target.value;
-    const valid = autoComplete(searchValue, addresses);
-     // validates user input
-    if(!searchValue.trim() || valid.length === 0){
-        suggestions.innerHTML = '';//Guard Statement
-        hideElement(suggestions);
-        return;
-    }
-    hideElement(displayResult)
-    hideElement(errorMsg)
-    showElement(suggestions)
-    suggestions.innerHTML = '';
-    addSuggestionsLi(searchValue)
-    });
-};
-
-
 //Adds the matches to the suggestion ul
-const addSuggestionsLi = (searchValue) => {
+const suggestAddresslist = (searchValue) => {
     const matches = autoComplete(searchValue, addresses);
      matches.forEach(address => {
         const li = document.createElement('li');
@@ -62,6 +38,26 @@ const addSuggestionsLi = (searchValue) => {
     });
 };
 
+//Generate the array of suggested addresses as the user types
+const suggestAddress = () => {
+    addressInput.addEventListener('input', (event) => {
+    const searchValue = event.target.value;
+    const valid = autoComplete(searchValue, addresses);
+     // validates user input
+    if(!searchValue.trim() || valid.length === 0){
+        suggestions.innerHTML = '';//Guard Statement
+        hideElement(suggestions);
+        return;
+    }
+    hideElement(displayResult);
+    hideElement(errorMsg);
+    showElement(suggestions);
+    suggestions.innerHTML = '';
+    suggestAddresslist(searchValue);
+    });
+};
+
+
 //toggle to remove clear button when input is empty
 const clearBtnElement = () =>{    
     addressInput.addEventListener('input', () => {
@@ -69,6 +65,15 @@ const clearBtnElement = () =>{
     });
     clearBtn.addEventListener('click', () => {
         addressInput.value = '';
+    });
+};
+
+//Show the result
+const searchEvent = () => {
+    searchBtn.addEventListener('click', () => {
+        hideElement(suggestions);
+        showElement(displayResult);
+        resultHandler();
     });
 };
 
@@ -84,22 +89,6 @@ const resultHandler = () => {
     <p>MST: ${result[0].mstId}</p>
     <p>MST Connection: ${result[0].mstConnection}</p>
     `
-}
-
-//Show the result
-searchBtn.addEventListener('click', () => {
-    hideElement(suggestions)
-    showElement(displayResult)
-    resultHandler()
-})
-//Hide element
-const hideElement = (element) => {
-     element.classList.add('hidden')
-};
-
-//Show element
-const showElement = (element) => {
-     element.classList.remove('hidden')
 };
 
 //Validates user input to display error only when needed
@@ -110,9 +99,19 @@ const inputValidation = () => {
     if(!isValid){
         addressInput.value = '';
         hideElement(displayResult);
-        hideElement(suggestions)
-        showError('Please enter a valid address')
+        hideElement(suggestions);
+        showError('Please enter a valid address');
     };
+};
+
+//Hide element
+const hideElement = (element) => {
+     element.classList.add('hidden')
+};
+
+//Show element
+const showElement = (element) => {
+     element.classList.remove('hidden')
 };
 
 //Shows error message on screen
@@ -121,6 +120,10 @@ const showError = (message) => {
     showElement(errorMsg)
 }
 
+const runProgram = () => {
+    suggestAddress()
+    clearBtnElement()
+    searchEvent()
+}
 
-autoCompleteElement()
-clearBtnElement()
+runProgram()

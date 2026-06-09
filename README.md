@@ -13,7 +13,7 @@ Address checker for a Fiber company to show cab number and connections as well a
 [x] Fix input validation to not to show a result unless there is something typed in  and to not display anything if there is no match.
 
 *2026-06-09*
-[ ] Clean Code in search bar DOM
+[x] Clean Code in search bar DOM
 [ ] Disable search button when result is displayed and re enable when user deletes characters
 
 *2026-06-10*
