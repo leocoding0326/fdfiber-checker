@@ -37,7 +37,9 @@ const autoCompleteElement = () => {
         hideElement(suggestions);
         return;
     }
-    (showElement(suggestions))
+    hideElement(displayResult)
+    hideElement(errorMsg)
+    showElement(suggestions)
     suggestions.innerHTML = '';
     addSuggestionsLi(searchValue)
     });
@@ -86,6 +88,7 @@ const resultHandler = () => {
 
 //Show the result
 searchBtn.addEventListener('click', () => {
+    hideElement(suggestions)
     showElement(displayResult)
     resultHandler()
 })
@@ -107,6 +110,7 @@ const inputValidation = () => {
     if(!isValid){
         addressInput.value = '';
         hideElement(displayResult);
+        hideElement(suggestions)
         showError('Please enter a valid address')
     };
 };
