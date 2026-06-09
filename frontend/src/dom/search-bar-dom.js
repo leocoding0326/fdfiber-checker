@@ -105,6 +105,8 @@ const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
     if(!isValid){
+        addressInput.value = '';
+        hideElement(displayResult);
         showError('Please enter a valid address')
     };
 };

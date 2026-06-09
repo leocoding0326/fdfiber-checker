@@ -8,10 +8,11 @@ Address checker for a Fiber company to show cab number and connections as well a
 [x] Write code block to extract address, cab number, cab connection & mst info from database array.
 
 *2026-06-08*
-[ ] Write code block to push info into DOM display elements.
-[ ] Fix error handler to run on search button click
+[x] Write code block to push info into DOM display elements.
+[x] Fix error handler to run on search button click
 
 *2026-06-09*
+[ ] Fix input validation to not to show a result unless there is something typed in  and to not display anything if there is no match.
 [ ] Add a clear button that clears results and Input for the user to start over.
 [ ] Start Designing Log In page Html.
 
