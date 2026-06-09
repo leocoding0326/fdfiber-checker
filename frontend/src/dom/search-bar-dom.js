@@ -19,8 +19,11 @@ import addresses from '../modules/database.js';
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
 const clearBtn = document.querySelector('.clear-btn');//clear btn element
+const searchBtn = document.querySelector('.search-btn')//Search Button element
 const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
+
+
 
 
 //Shows Matches as user type in
@@ -67,18 +70,25 @@ const clearBtnElement = () =>{
     });
 };
 
-//Displays the results in the DOM
+//Push the results to displayResult
 const resultHandler = () => {
-    const result = userInputHandler(addressInput, addresses);
+    const addressString = addressInput.value;
+    const result = userInputHandler(addressString, addresses);
+    inputValidation();
     displayResult.innerHTML = `
-    <h3>Address: ${result.address}</h3>
-    <p>Cabinet Number: ${result.cabinet}</p>
-    <p>Cabinet Connection: ${result.cabinetConnection}</p>
-    <p>MST: ${result.mstId}</p>
-    <p>MST Connection: ${result.mstConnection}</p>
+    <h3>Address: ${result[0].address}</h3>
+    <p>Cabinet Number: ${result[0].cabinet}</p>
+    <p>Cabinet Connection: ${result[0].cabinetConnection}</p>
+    <p>MST: ${result[0].mstId}</p>
+    <p>MST Connection: ${result[0].mstConnection}</p>
     `
 }
 
+//Show the result
+searchBtn.addEventListener('click', () => {
+    showElement(displayResult)
+    resultHandler()
+})
 //Hide element
 const hideElement = (element) => {
      element.classList.add('hidden')
@@ -91,7 +101,7 @@ const showElement = (element) => {
 
 //Validates user input to display error only when needed
 // //Will rework on it once Google Maps API is added 
-/*const inputValidation = () => {
+const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
     if(!isValid){
@@ -103,7 +113,7 @@ const showElement = (element) => {
 const showError = (message) => {
     errorMsg.textContent = message;
     showElement(errorMsg)
-}*/
+}
 
 
 autoCompleteElement()
