@@ -19,7 +19,7 @@ import addresses from '../modules/database.js';
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
 const clearBtn = document.querySelector('.clear-btn');//clear btn element
-const searchBtn = document.querySelector('.search-btn')//Search Button element
+const searchBtn = document.querySelector('.search-btn');//Search Button element
 const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
 
