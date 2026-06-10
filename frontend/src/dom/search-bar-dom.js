@@ -54,6 +54,7 @@ const suggestAddress = () => {
     showElement(suggestions);
     suggestions.innerHTML = '';
     suggestAddresslist(searchValue);
+    enableBtn(searchBtn);
     });
 };
 
@@ -71,9 +72,13 @@ const clearBtnElement = () =>{
 //Show the result
 const searchEvent = () => {
     searchBtn.addEventListener('click', () => {
+        if(!inputValidation()) {
+            return;
+        }
         hideElement(suggestions);
         showElement(displayResult);
         resultHandler();
+        disableBtn(searchBtn)
     });
 };
 
@@ -81,7 +86,6 @@ const searchEvent = () => {
 const resultHandler = () => {
     const addressString = addressInput.value;
     const result = userInputHandler(addressString, addresses);
-    inputValidation();
     displayResult.innerHTML = `
     <h3>Address: ${result[0].address}</h3>
     <p>Cabinet Number: ${result[0].cabinet}</p>
@@ -101,7 +105,9 @@ const inputValidation = () => {
         hideElement(displayResult);
         hideElement(suggestions);
         showError('Please enter a valid address');
-    };
+        return false
+    }
+    return true
 };
 
 //Hide element
@@ -119,6 +125,17 @@ const showError = (message) => {
     errorMsg.textContent = message;
     showElement(errorMsg)
 }
+
+//Disable buttons on click
+
+const disableBtn = (btn) => {
+    btn.disabled = true;
+};
+
+//Enable element when inputing
+const enableBtn = (btn) => {
+    btn.disabled = false;
+};
 
 const runProgram = () => {
     suggestAddress()

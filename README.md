@@ -14,11 +14,13 @@ Address checker for a Fiber company to show cab number and connections as well a
 
 *2026-06-09*
 [x] Clean Code in search bar DOM
-[ ] Disable search button when result is displayed and re enable when user deletes characters
+[x] Disable search button when result is displayed and re enable when user deletes characters
 
 *2026-06-10*
+[ ] Handle console error when user click btn and there is not an input
 [ ] Make search button work when user hits Enter also
 [ ] Style error message to be under search bar
+[ ] Fix issue were display results join to the input field(maybe use clamp to handle text responsivness)
 
 *2026-06-11*
 [ ] Add animation to the suggestion list after the user clicks on it.
