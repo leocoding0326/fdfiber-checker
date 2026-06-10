@@ -17,7 +17,7 @@ Address checker for a Fiber company to show cab number and connections as well a
 [x] Disable search button when result is displayed and re enable when user deletes characters
 
 *2026-06-10*
-[ ] Handle console error when user click btn and there is not an input
+[x] Handle console error when user click btn and there is not an input
 [ ] Make search button work when user hits Enter also
 [ ] Style error message to be under search bar
 [ ] Fix issue were display results join to the input field(maybe use clamp to handle text responsivness)
