@@ -20,6 +20,7 @@ const clearBtn = document.querySelector('.clear-btn');//clear btn element
 const searchBtn = document.querySelector('.search-btn');//Search Button element
 const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
+const searchForm = document.getElementById('search-bar')
 
 
 //Adds the matches to the suggestion ul
@@ -71,7 +72,8 @@ const clearBtnElement = () =>{
 
 //Show the result
 const searchEvent = () => {
-    searchBtn.addEventListener('click', () => {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         if(!inputValidation()) {
             return;
         }
@@ -106,8 +108,9 @@ const inputValidation = () => {
         hideElement(suggestions);
         showError('Please enter a valid address');
         return false
-    }
-    return true
+    } else if (!valid.trim()) {
+        return false
+    } else return true
 };
 
 //Hide element
