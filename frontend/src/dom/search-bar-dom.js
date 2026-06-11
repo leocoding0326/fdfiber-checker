@@ -34,6 +34,7 @@ const suggestAddresslist = (searchValue) => {
             addressInput.value = address;
             suggestions.innerHTML = ''; // clears suggestions once one li is clicked
             hideElement(suggestions);
+            addressInput.focus();
         })
         suggestions.appendChild(li);
     });
@@ -67,6 +68,7 @@ const clearBtnElement = () =>{
     });
     clearBtn.addEventListener('click', () => {
         addressInput.value = '';
+        hideElement(displayResult);
     });
 };
 
