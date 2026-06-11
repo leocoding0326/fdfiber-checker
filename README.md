@@ -28,6 +28,7 @@ Address checker for a Fiber company to show cab number and connections as well a
 [ ] Add animation of rotation to the search button for a few sec when user clicks on it before displaying results
 
 *2026-06-12*
+[ ] Make suggestions fully rehusable between modules
 [ ] Start Designing Log In page Html.
 
 
