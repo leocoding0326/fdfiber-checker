@@ -90,6 +90,10 @@ const searchEvent = () => {
 const resultHandler = () => {
     const addressString = addressInput.value;
     const result = userInputHandler(addressString, addresses);
+    if (!result.length) {
+        showError('Address Not Fund')
+        return;
+    }
     displayResult.innerHTML = `
     <h3>Address: ${result[0].address}</h3>
     <p>Cabinet Number: ${result[0].cabinet}</p>
@@ -104,13 +108,14 @@ const resultHandler = () => {
 const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
-    if(!isValid){
+    if (!valid.trim()) {
+        return false
+    } else if(!isValid){
+        displayResult.innerHTML = '';
         addressInput.value = '';
         hideElement(displayResult);
         hideElement(suggestions);
         showError('Please enter a valid address');
-        return false
-    } else if (!valid.trim()) {
         return false
     } else return true
 };
