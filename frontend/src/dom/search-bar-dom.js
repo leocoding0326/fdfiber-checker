@@ -109,9 +109,7 @@ const resultHandler = () => {
 const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
-    if (!valid.trim()) {
-        return false
-    } else if(!isValid){
+    if(!isValid || !valid.trim()){
         displayResult.innerHTML = '';
         addressInput.value = '';
         hideElement(displayResult);
