@@ -30,9 +30,8 @@ main {
 
 .error-msg {
     color: #E33F27;
-    margin-left: 1rem;
-    width: 100%;
-    text-align: left;
-    font-size: clamp(.7rem, 1vw, 1rem);
+    font-size: clamp(.5rem, 1.5vw, 1rem);
+    align-self: flex-start;
+    margin: 5px 0 0 60px;
 }
 

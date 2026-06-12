@@ -69,6 +69,7 @@ const clearBtnElement = () =>{
     clearBtn.addEventListener('click', () => {
         addressInput.value = '';
         hideElement(displayResult);
+        hideElement(errorMsg);
     });
 };
 
@@ -132,7 +133,9 @@ const showElement = (element) => {
 
 //Shows error message on screen
 const showError = (message) => {
-    errorMsg.textContent = message;
+    errorMsg.innerHTML =`
+    <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>
+    ${message}`;
     showElement(errorMsg)
 }
 
