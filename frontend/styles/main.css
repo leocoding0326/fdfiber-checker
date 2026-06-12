@@ -13,6 +13,7 @@
 
 .main-page-body {
    background-image: url(../media/images/search-file-background.png);
+   height: 100vh;
 }
 
 main,
@@ -35,8 +36,10 @@ main,
 
 #search-bar {
     width: 80vw;
+    min-height: 50vh;
     margin: 0 auto;
     flex-direction: column;
+    justify-content: center;
     position: relative;
 }
 
@@ -142,5 +145,8 @@ main,
 @media (max-width: 450px) {
     #suggestions {
         width: 100%;
+    }
+    #search-bar {
+        min-height: 30vh;
     }
 }

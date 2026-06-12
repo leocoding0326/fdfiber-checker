@@ -16,6 +16,7 @@ main {
     min-height: 80vh;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 2rem 0;
 }
 
 .input-style {

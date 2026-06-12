@@ -24,12 +24,13 @@ Address checker for a Fiber company to show cab number and connections as well a
 *2026-06-11*
 [x] Style error message to be under search bar
 [x] Fix issue were display results join to the input field(maybe use clamp to handle text responsivness)
-[ ] Make coursor to become a pointer when hoovering search btn
+[x] Make coursor to become a pointer when hoovering search btn
 
 *2026-06-12*
 [ ] Add animation to the suggestion list after the user clicks on it.
 [ ] Add animation to the display element when user do a search
 [ ] Add animation of rotation to the search button for a few sec when user clicks on it before displaying results
+[ ] Add a smooth animation to error msg
 [ ] Make suggestions fully rehusable between modules
 [ ] Start Designing Log In page Html.
 
