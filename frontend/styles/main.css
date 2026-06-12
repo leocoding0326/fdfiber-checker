@@ -60,6 +60,11 @@ main,
     border-radius: 100%;
 }
 
+.search-btn:hover {
+    cursor: pointer;
+    background-color:#b13b29;
+}
+
 .clear-btn {
     background-color: white;
     padding: 0;
