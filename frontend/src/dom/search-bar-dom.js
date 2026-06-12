@@ -70,6 +70,7 @@ const clearBtnElement = () =>{
         addressInput.value = '';
         hideElement(displayResult);
         hideElement(errorMsg);
+        addressInput.focus();
     });
 };
 
