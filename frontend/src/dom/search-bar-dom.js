@@ -51,14 +51,20 @@ const suggestAddress = () => {
         hideElement(suggestions);
         return;
     }
+        showSuggestAddress(searchValue);
+    });
+};
+
+//Shows suggestions UI elements
+
+const showSuggestAddress = (value) => {
     hideElement(displayResult);
     hideElement(errorMsg);
     showElement(suggestions);
     suggestions.innerHTML = '';
-    suggestAddresslist(searchValue);
+    suggestAddresslist(value);
     enableBtn(searchBtn);
-    });
-};
+}
 
 
 //toggle to remove clear button when input is empty
