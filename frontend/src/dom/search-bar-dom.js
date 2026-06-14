@@ -24,8 +24,8 @@ const searchForm = document.getElementById('search-bar')
 
 
 //Adds the matches to the suggestion ul
-const suggestAddresslist = (searchValue) => {
-    const matches = autoComplete(searchValue, addresses);
+const suggestAddresslist = (userInput) => {
+    const matches = autoComplete(userInput, addresses);
      matches.forEach(address => {
         const li = document.createElement('li');
         li.textContent = address;
@@ -43,15 +43,15 @@ const suggestAddresslist = (searchValue) => {
 //Generate the array of suggested addresses as the user types
 const suggestAddress = () => {
     addressInput.addEventListener('input', (event) => {
-    const searchValue = event.target.value;
-    const valid = autoComplete(searchValue, addresses);
+    const userInput = event.target.value;
+    const valid = autoComplete(userInput, addresses);
      // validates user input
-    if(!searchValue.trim() || valid.length === 0){
+    if(!userInput.trim() || valid.length === 0){
         suggestions.innerHTML = '';//Guard Statement
         hideElement(suggestions);
         return;
     }
-        showSuggestAddress(searchValue);
+        showSuggestAddress(userInput);
     });
 };
 

@@ -1,6 +1,34 @@
 # fdfiber-checker
 Address checker for a Fiber company to show cab number and connections as well as mst
 
+## Directory Tree Format
+```
+fdfiber-address-checker/
+├── backend/
+│   └── databases/
+│       └── database.js
+├── tests/
+│   └── search-bar.test.js
+├── frontend/
+│   ├── styles/
+│   │   ├── base.css
+│   │   ├── login.css
+│   │   └── main.css
+│   ├── media/
+│   │   └── img/
+│   ├── src/
+│   │   ├── dom/
+│   │   │   ├── login-dom.js
+│   │   │   └── search-bar-dom.js
+│   │   └── modules/
+│   │       └── search-bar.js
+│   ├── main.html
+│   └── login.html
+├── node_modules/
+├── package-lock.json
+└── package.json
+```
+
 ## Daily Task Checklist:
 
 *2026-06-07*
@@ -35,34 +63,3 @@ Address checker for a Fiber company to show cab number and connections as well a
 [ ] Add a smooth animation to error msg
 [ ] Make suggestions fully rehusable between modules
 [ ] Start Designing Log In page Html.
-
-
-
-
-## Directory Tree Format
-```
-fdfiber-address-checker/
-├── backend/
-│   └── databases/
-│       └── database.js
-├── tests/
-│   └── search-bar.test.js
-├── frontend/
-│   ├── styles/
-│   │   ├── base.css
-│   │   ├── login.css
-│   │   └── main.css
-│   ├── media/
-│   │   └── img/
-│   ├── src/
-│   │   ├── dom/
-│   │   │   ├── login-dom.js
-│   │   │   └── search-bar-dom.js
-│   │   └── modules/
-│   │       └── search-bar.js
-│   ├── main.html
-│   └── login.html
-├── node_modules/
-├── package-lock.json
-└── package.json
-```
