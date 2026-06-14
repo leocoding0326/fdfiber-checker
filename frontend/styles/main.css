@@ -84,6 +84,7 @@ main,
 
 .clear-btn:hover {
     color: black;
+    cursor: pointer;
 }
 
 /* Suggestions Style */
