@@ -1,5 +1,5 @@
 class clearBtn {
-    constructor(input, btn, response, error) {
+    constructor({input, btn, response, error}) {
         this.input = input;
         this.btn = btn;
         this.response = response;
