@@ -26,4 +26,8 @@ export class ClearBtn {
             this.hide(this.btn);
         });
     }
+    init() {
+        this.showOnInput();
+        this.clearOnClick();
+    }
 };

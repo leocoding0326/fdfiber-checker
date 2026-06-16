@@ -13,7 +13,7 @@ Software Algorithm:
 
 import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
-import { useClearBtn } from '../../components/clearBtn/index.js';
+import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
 
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
@@ -67,19 +67,17 @@ const showSuggestAddress = (value) => {
     enableBtn(searchBtn);
 }
 
-
-/*//toggle to remove clear button when input is empty
-const clearBtnElement = () =>{    
-    addressInput.addEventListener('input', () => {
-        clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
-    });
-    clearBtn.addEventListener('click', () => {
-        addressInput.value = '';
-        hideElement(displayResult);
-        hideElement(errorMsg);
-        addressInput.focus();
-    });
-};*/
+//Exectues Clear Button
+const executeClearBtn = () => {
+    const initClearBtn = new ClearBtn ({
+        input: addressInput,
+        btn: clearBtn,
+        response: displayResult,
+        error: errorMsg,
+    })
+    initClearBtn.init();
+    return initClearBtn;
+}
 
 //Show the result
 const searchEvent = () => {
@@ -157,14 +155,9 @@ const enableBtn = (btn) => {
 };
 
 const runProgram = () => {
-    suggestAddress()
-    useClearBtn({
-        input: addressInput,
-        btn: clearBtn,
-        response: displayResult,
-        error: errorMsg,
-    })
-    searchEvent()
+    suggestAddress();
+    executeClearBtn();
+    searchEvent();
 }
 
 runProgram()
