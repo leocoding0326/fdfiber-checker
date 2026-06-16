@@ -2,6 +2,8 @@ class clearBtn {
     constructor(input, btn, response, error) {
         this.input = input;
         this.btn = btn;
+        this.response = response;
+        this.error = error;
     };
     show(element) {
         element.classList.remove('hidden');
@@ -12,13 +14,15 @@ class clearBtn {
     //show element on input
     showOnInput() {
         this.input.addEventListener('input', () => {
-            this.element.classList.toggle('hidden', this.input.value.length === 0);
+            this.btn.classList.toggle('hidden', this.input.value.length === 0);
         });
     }
     clearOnClick() {
-        this.element.addEventListener('click', () => {
+        this.btn.addEventListener('click', () => {
             this.input.value = '';
-
+            this.hide(this.response);
+            this.hide(this.error);
+            this.input.focus();
         });
     }
 };
