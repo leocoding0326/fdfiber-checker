@@ -13,6 +13,7 @@ Software Algorithm:
 
 import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
+import { useClearBtn } from '../../components/clearBtn/index.js';
 
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
@@ -67,7 +68,7 @@ const showSuggestAddress = (value) => {
 }
 
 
-//toggle to remove clear button when input is empty
+/*//toggle to remove clear button when input is empty
 const clearBtnElement = () =>{    
     addressInput.addEventListener('input', () => {
         clearBtn.classList.toggle('hidden', addressInput.value.length === 0);
@@ -78,7 +79,7 @@ const clearBtnElement = () =>{
         hideElement(errorMsg);
         addressInput.focus();
     });
-};
+};*/
 
 //Show the result
 const searchEvent = () => {
@@ -157,7 +158,12 @@ const enableBtn = (btn) => {
 
 const runProgram = () => {
     suggestAddress()
-    clearBtnElement()
+    useClearBtn({
+        input: addressInput,
+        btn: clearBtn,
+        response: displayResult,
+        error: errorMsg,
+    })
     searchEvent()
 }
 

@@ -23,6 +23,7 @@ export class ClearBtn {
             this.hide(this.response);
             this.hide(this.error);
             this.input.focus();
+            this.hide(this.btn);
         });
     }
 };
