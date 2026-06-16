@@ -1,4 +1,4 @@
-class clearBtn {
+export class ClearBtn {
     constructor({input, btn, response, error}) {
         this.input = input;
         this.btn = btn;
