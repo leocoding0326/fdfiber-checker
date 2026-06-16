@@ -1,7 +1,6 @@
 class clearBtn {
     constructor(input, element) {
         this.input = input;
-        this.hidden = true;
         this.element = element;
     };
     show() {

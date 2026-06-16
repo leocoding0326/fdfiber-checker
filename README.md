@@ -23,7 +23,7 @@ fdfiber-address-checker/
 │   │   └── modules/
 │   │       └── search-bar.js
 │   ├── main.html
-│   └── login.html
+│   └── login.html|
 ├── node_modules/
 ├── package-lock.json
 └── package.json
@@ -54,12 +54,18 @@ fdfiber-address-checker/
 [x] Fix issue were display results join to the input field(maybe use clamp to handle text responsivness)
 [x] Make coursor to become a pointer when hoovering search btn
 
-*2026-06-13*
-[ ] Update function names to be better readable
-[ ] Simplify code joining all UI functions under one for UI queries
-[ ] Add animation to the suggestion list after the user clicks on it.
-[ ] Add animation to the display element when user do a search
+*2026-06-13 to 2026-06-20*
+[x] Update function names to be better readable
+[x] Simplify code joining all UI functions under one for UI queries
+[ ] Transfer suggest address to its own module and make it rehusable accross the whole app.
+    Will be a class.
+    Will use JSDoc
+    Will be a component at the end of the project
+
+*2026-06-21*
+[ ] Start Designing Log In page Html.
+
+
+*Not important but nice to add*
 [ ] Add animation of rotation to the search button for a few sec when user clicks on it before displaying results
 [ ] Add a smooth animation to error msg
-[ ] Make suggestions fully rehusable between modules
-[ ] Start Designing Log In page Html.
