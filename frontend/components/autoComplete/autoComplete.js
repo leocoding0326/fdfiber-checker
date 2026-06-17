@@ -1,5 +1,3 @@
-import { createElement } from "react";
-
 class AutoComplete {
     constructor({input, database, display}){
         this.input = input,
@@ -9,13 +7,13 @@ class AutoComplete {
     };
 
     findMatches() {
-        const normalized = this.input.toLowerCase();
+        const normalized = this.input.value.toLowerCase();
 
         return this.database
-        .filter((match) => {
+        .filter(match => 
             typeof match.database === 'string' && 
-            match.databse.toLowerCase().inlcudes(normalized);
-        })
+            match.database.toLowerCase().includes(normalized)
+        )
         .map(match => match.database)
         .slice(0, 5);
     };
@@ -37,7 +35,7 @@ class AutoComplete {
                 this.input.value = li.textContent;
                 this.display.innerHTML = '';
                 this.input.focus();
-                this.isOpen = true;
+                this.isOpen = false;
             })
         })
     };
