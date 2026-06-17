@@ -5,18 +5,19 @@ export class AutoComplete {
         this.display = display
         this.isOpen = false
     };
+    
 
     init() {
         this.runMatches();
-    }
+    };
 
     clear() {
         this.display.classList.add('hidden');
-    }
+    };
 
     show() {
         this.display.classList.remove('hidden')
-    }
+    };
 
     findMatches() {
         const normalized = this.input.value.toLowerCase();
@@ -42,7 +43,7 @@ export class AutoComplete {
 
             li.addEventListener('click', () => {
                 this.input.value = li.textContent;
-                this.display.innerHTML = '';
+                this.clear();
                 this.input.focus();
                 this.isOpen = false;
             })
@@ -60,5 +61,5 @@ export class AutoComplete {
             this.display.innerHTML = '';
             this.listMatches();
         })
-    }
+    };
 };

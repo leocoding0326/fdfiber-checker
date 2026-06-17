@@ -1,24 +1,4 @@
 import addresses from "./database.js";//Imports database
-/*
-Algorithm for autocomplete
-
-1. Takes user input
-2. Checks wich addresses in the database includes what the user is writing
-3. Returns only addresses
-4. Limit addresses to 5
-*/
-
-const autoComplete = (searchTerm, addresses) => {
-    const normalized = searchTerm.toLowerCase();
-
-    return addresses
-        .filter((possibleAddress)=> 
-            typeof possibleAddress.address === 'string' &&
-            possibleAddress.address.toLowerCase().includes(normalized)
-        )
-        .map(possibleAddress => possibleAddress.address)
-        .slice(0, 5);
-};
 
 /* 
 Algorithm for search bar:

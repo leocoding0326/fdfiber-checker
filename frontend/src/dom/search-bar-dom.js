@@ -24,49 +24,7 @@ const errorMsg = document.querySelector('.error-msg'); //error message element
 const displayResult = document.querySelector('.info-display');//Display element under search bar
 const searchForm = document.getElementById('search-bar')
 
-
-//Adds the matches to the suggestion ul
-/*const suggestAddresslist = (userInput) => {
-    const matches = autoComplete(userInput, addresses);
-     matches.forEach(address => {
-        const li = document.createElement('li');
-        li.textContent = address;
-
-        li.addEventListener('click', () => {//Adds suggested address to input
-            addressInput.value = address;
-            suggestions.innerHTML = ''; // clears suggestions once one li is clicked
-            hideElement(suggestions);
-            addressInput.focus();
-        })
-        suggestions.appendChild(li);
-    });
-};
-
-//Generate the array of suggested addresses as the user types
-const suggestAddress = () => {
-    addressInput.addEventListener('input', (event) => {
-    const userInput = event.target.value;
-    const valid = autoComplete(userInput, addresses);
-     // validates user input
-    if(!userInput.trim() || valid.length === 0){
-        suggestions.innerHTML = '';//Guard Statement
-        hideElement(suggestions);
-        return;
-    }
-        showSuggestAddress(userInput);
-    });
-};
-
-//Shows suggestions UI elements
-
-const showSuggestAddress = (value) => {
-    hideElement(displayResult);
-    hideElement(errorMsg);
-    showElement(suggestions);
-    suggestions.innerHTML = '';
-    suggestAddresslist(value);
-    enableBtn(searchBtn);
-}*/
+//executes automplete
 const executeAutoComplete = () => {
     const initAutoComplete = new AutoComplete({
         input: addressInput,
@@ -100,7 +58,6 @@ const searchEvent = () => {
         hideElement(suggestions);
         showElement(displayResult);
         resultHandler();
-        disableBtn(searchBtn)
     });
 };
 
@@ -154,16 +111,6 @@ const showError = (message) => {
     showElement(errorMsg)
 }
 
-//Disable buttons on click
-
-const disableBtn = (btn) => {
-    btn.disabled = true;
-};
-
-//Enable element when inputing
-const enableBtn = (btn) => {
-    btn.disabled = false;
-};
 
 const runProgram = () => {
     //suggestAddress();
