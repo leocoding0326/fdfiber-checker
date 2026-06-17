@@ -6,6 +6,10 @@ class AutoComplete {
         this.isOpen = false
     };
 
+    init() {
+        this.runMatches();
+    }
+
     findMatches() {
         const normalized = this.input.value.toLowerCase();
 
@@ -39,4 +43,16 @@ class AutoComplete {
             })
         })
     };
+
+    runMatches() {
+        this.input.addEventListener('input', (event) => {
+            const userInput = event.target.value;
+            if (!userInput.trim()) {
+                return
+            };
+            this.display.innerHTML = '';
+            this.findMatches();
+            this.listMatches();
+        })
+    }
 };
