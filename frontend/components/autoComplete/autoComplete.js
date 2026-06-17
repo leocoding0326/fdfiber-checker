@@ -32,15 +32,13 @@ export class AutoComplete {
 
 
     listMatches() {
-        this.display.innerHTML = '';
+        this.clear();
         const matches = this.findMatches();
-
-        this.isOpen = matches.length > 0;
-
         matches.forEach((match) => {
             const li = document.createElement('li');
             li.textContent = match;
             this.display.appendChild(li);
+            this.show();
 
             li.addEventListener('click', () => {
                 this.input.value = li.textContent;
@@ -54,7 +52,6 @@ export class AutoComplete {
     runMatches() {
         this.input.addEventListener('input', (event) => {
             const userInput = event.target.value;
-            this.show();
             if(!userInput.trim()) {
                 this.display.innerHTML = '';
                 this.clear();
