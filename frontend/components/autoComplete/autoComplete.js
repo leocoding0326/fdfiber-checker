@@ -1,4 +1,4 @@
-class AutoComplete {
+export class AutoComplete {
     constructor({input, database, display}){
         this.input = input,
         this.database = database,
@@ -15,10 +15,10 @@ class AutoComplete {
 
         return this.database
         .filter(match => 
-            typeof match.database === 'string' && 
-            match.database.toLowerCase().includes(normalized)
+            typeof match.address === 'string' && 
+            match.address.toLowerCase().includes(normalized)
         )
-        .map(match => match.database)
+        .map(match => match.address)
         .slice(0, 5);
     };
 
@@ -31,7 +31,7 @@ class AutoComplete {
         this.isOpen = matches.length > 0;
 
         matches.forEach((match) => {
-            const li = createElement('li');
+            const li = document.createElement('li');
             li.textContent = match;
             this.display.appendChild(li);
 
@@ -47,11 +47,11 @@ class AutoComplete {
     runMatches() {
         this.input.addEventListener('input', (event) => {
             const userInput = event.target.value;
-            if (!userInput.trim()) {
-                return
-            };
+            if(!userInput.trim()) {
+                this.display.innerHTML = '';
+                return;
+            }
             this.display.innerHTML = '';
-            this.findMatches();
             this.listMatches();
         })
     }

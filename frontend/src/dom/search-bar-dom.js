@@ -14,6 +14,7 @@ Software Algorithm:
 import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
 import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
+import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
 
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
@@ -25,7 +26,7 @@ const searchForm = document.getElementById('search-bar')
 
 
 //Adds the matches to the suggestion ul
-const suggestAddresslist = (userInput) => {
+/*const suggestAddresslist = (userInput) => {
     const matches = autoComplete(userInput, addresses);
      matches.forEach(address => {
         const li = document.createElement('li');
@@ -65,7 +66,17 @@ const showSuggestAddress = (value) => {
     suggestions.innerHTML = '';
     suggestAddresslist(value);
     enableBtn(searchBtn);
-}
+}*/
+const executeAutoComplete = () => {
+    const initAutoComplete = new AutoComplete({
+        input: addressInput,
+        database: addresses,
+        display: suggestions,
+    })
+    initAutoComplete.init();
+    return initAutoComplete;
+};
+
 
 //Exectues Clear Button
 const executeClearBtn = () => {
@@ -155,9 +166,11 @@ const enableBtn = (btn) => {
 };
 
 const runProgram = () => {
-    suggestAddress();
+    //suggestAddress();
+    executeAutoComplete();
     executeClearBtn();
     searchEvent();
+    console.log(addressInput)
 }
 
 runProgram()
