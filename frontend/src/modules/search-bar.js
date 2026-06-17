@@ -23,5 +23,5 @@ const addressExist = (input, database) => {
     return database.some(profile => profile.address.toLowerCase() === input.toLowerCase());
 }; 
 
-export {autoComplete, userInputHandler, addressExist};
+export { userInputHandler, addressExist};
 

@@ -11,7 +11,7 @@ Software Algorithm:
 */
 
 
-import {autoComplete, addressExist, userInputHandler} from '../modules/search-bar.js'
+import {addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
 import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
 import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
