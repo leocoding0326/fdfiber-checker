@@ -1,3 +1,5 @@
+import { createElement } from "react";
+
 class AutoComplete {
     constructor({input, database, display}){
         this.input = input,
@@ -15,4 +17,13 @@ class AutoComplete {
         .map(match => match.database)
         .slice(0, 5);
     };
+    listMatches() {
+      const matches = this.findMatches();
+      matches.forEach((match) => {
+        const li = createElement('li');
+        li.textContent = match;
+        this.display.appendChild(li)
+      })
+    };
+    
 };
