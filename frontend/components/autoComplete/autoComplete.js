@@ -7,6 +7,7 @@ class AutoComplete {
         this.display = display
         this.isOpen = false
     };
+
     findMatches() {
         const normalized = this.input.toLowerCase();
         return this.database
@@ -17,13 +18,20 @@ class AutoComplete {
         .map(match => match.database)
         .slice(0, 5);
     };
+
+
     listMatches() {
       const matches = this.findMatches();
       matches.forEach((match) => {
         const li = createElement('li');
         li.textContent = match;
         this.display.appendChild(li)
+
+        li.addEventListener('click', () => {
+            this.input.value = li.textContent;
+            this.display.innerHtml = '';
+            this.input.focus();
+        })
       })
     };
-    
 };
