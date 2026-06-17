@@ -107,7 +107,7 @@ main,
     border: lightgray;
     box-shadow: 0 0 10px;
     align-self: flex-end;
-    animation: slideDown .1s ease-in;
+    animation: slideDown .2s ease-in;
     padding: .25rem;
 }
 

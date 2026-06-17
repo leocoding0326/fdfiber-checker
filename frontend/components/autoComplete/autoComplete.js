@@ -10,6 +10,14 @@ export class AutoComplete {
         this.runMatches();
     }
 
+    clear() {
+        this.display.classList.add('hidden');
+    }
+
+    show() {
+        this.display.classList.remove('hidden')
+    }
+
     findMatches() {
         const normalized = this.input.value.toLowerCase();
 
@@ -25,7 +33,6 @@ export class AutoComplete {
 
     listMatches() {
         this.display.innerHTML = '';
-
         const matches = this.findMatches();
 
         this.isOpen = matches.length > 0;
@@ -47,8 +54,10 @@ export class AutoComplete {
     runMatches() {
         this.input.addEventListener('input', (event) => {
             const userInput = event.target.value;
+            this.show();
             if(!userInput.trim()) {
                 this.display.innerHTML = '';
+                this.clear();
                 return;
             }
             this.display.innerHTML = '';

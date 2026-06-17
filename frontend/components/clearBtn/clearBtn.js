@@ -1,3 +1,6 @@
+import { initautoComplete } from "../../src/dom/search-bar-dom.js";
+
+
 export class ClearBtn {
     constructor({input, btn, response, error}) {
         this.input = input;
@@ -24,6 +27,7 @@ export class ClearBtn {
             this.hide(this.error);
             this.input.focus();
             this.hide(this.btn);
+            initautoComplete.clear()
         });
     }
     init() {

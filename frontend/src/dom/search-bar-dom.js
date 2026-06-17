@@ -170,7 +170,8 @@ const runProgram = () => {
     executeAutoComplete();
     executeClearBtn();
     searchEvent();
-    console.log(addressInput)
 }
 
 runProgram()
+
+export const initautoComplete = executeAutoComplete()//exports autocomplete to access it inside clear btn
