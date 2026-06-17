@@ -10,6 +10,7 @@ class AutoComplete {
 
     findMatches() {
         const normalized = this.input.toLowerCase();
+
         return this.database
         .filter((match) => {
             typeof match.database === 'string' && 
@@ -21,17 +22,23 @@ class AutoComplete {
 
 
     listMatches() {
-      const matches = this.findMatches();
-      matches.forEach((match) => {
-        const li = createElement('li');
-        li.textContent = match;
-        this.display.appendChild(li)
+        this.display.innerHTML = '';
 
-        li.addEventListener('click', () => {
-            this.input.value = li.textContent;
-            this.display.innerHtml = '';
-            this.input.focus();
+        const matches = this.findMatches();
+
+        this.isOpen = matches.length > 0;
+
+        matches.forEach((match) => {
+            const li = createElement('li');
+            li.textContent = match;
+            this.display.appendChild(li);
+
+            li.addEventListener('click', () => {
+                this.input.value = li.textContent;
+                this.display.innerHTML = '';
+                this.input.focus();
+                this.isOpen = true;
+            })
         })
-      })
     };
 };
