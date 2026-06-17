@@ -5,7 +5,7 @@ class AutoComplete {
         this.display = display
         this.isOpen = false
     };
-    runAutoComplete() {
+    findMatches() {
         const normalized = this.input.toLowerCase();
         return this.database
         .filter((match) => {
@@ -14,6 +14,5 @@ class AutoComplete {
         })
         .map(match => match.database)
         .slice(0, 5);
-    }
-
+    };
 };
