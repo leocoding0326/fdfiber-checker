@@ -55,10 +55,7 @@ const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if(!inputValidation()) {
-            console.log(inputValidation())
             error.showError();
-            console.log(error)
-            displayResult.innerHTML = '';
             addressInput.value = '';
             hideElement(displayResult);
             hideElement(suggestions);
