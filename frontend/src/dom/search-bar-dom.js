@@ -56,7 +56,6 @@ const searchEvent = () => {
         e.preventDefault();
         if(!inputValidation()) {
             error.showError();
-            addressInput.value = '';
             hideElement(displayResult);
             hideElement(suggestions);
             return;
