@@ -17,4 +17,13 @@ class ErrorMessage {
         return database.some(profile => profile.address.toLowerCase() === input.toLowerCase());
     }
     
+    validation() {
+        if (this.addressExist) {
+            this.isValid 
+        }
+        else (!this.isValid);
+    }
+
+    
+
 }
