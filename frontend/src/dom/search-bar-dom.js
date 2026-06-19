@@ -51,10 +51,27 @@ const executeClearBtn = () => {
 }
 
 //Executes Error
-const executeError = message => {
+const executeError = (errorText) => {
         const error = new ErrorMessage({
         displayError: errorMsg,
-        message: message
+        message: errorText
+    });
+        error.showError();
+};
+
+//Show the result
+const searchEvent = () => {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(!inputValidation()) {
+            executeError('Please enter a valid input!')
+            hideElement(displayResult);
+            hideElement(suggestions);
+            return;
+        }
+        hideElement(suggestions);
+        showElement(displayResult);
+        resultHandler();
     });
 };
 
@@ -66,23 +83,6 @@ const inputValidation = () => {
         return false
     } else return true
 };
-
-//Show the result
-const searchEvent = () => {
-    searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if(!inputValidation()) {
-            executeError('Please enter a valid address');
-            hideElement(displayResult);
-            hideElement(suggestions);
-            return;
-        }
-        hideElement(suggestions);
-        showElement(displayResult);
-        resultHandler();
-    });
-};
-
 
 //Push the results to displayResult
 const resultHandler = () => {
@@ -121,5 +121,3 @@ const runProgram = () => {
 runProgram()
 
 export const initautoComplete = executeAutoComplete()//exports autocomplete to access it inside clear btn
-
-export const error = executeError()//exports error to access it inside clearBtn and autoComplete

@@ -1,8 +1,9 @@
 export class AutoComplete {
-    constructor({input, database, display}){
+    constructor({input, database, display, error}){
         this.input = input,
         this.database = database,
-        this.display = display
+        this.display = display,
+        this.error = error
     };
     
 
@@ -52,6 +53,7 @@ export class AutoComplete {
     runMatches() {
         this.input.addEventListener('input', (event) => {
             const userInput = event.target.value;
+            this.error.hidden = true;
             if(!userInput.trim()) {
                 this.display.innerHTML = '';
                 this.clear();
