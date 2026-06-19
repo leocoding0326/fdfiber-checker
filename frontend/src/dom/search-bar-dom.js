@@ -50,12 +50,29 @@ const executeClearBtn = () => {
     return initClearBtn;
 }
 
+//Executes Error
+const executeError = message => {
+        const error = new ErrorMessage({
+        displayError: errorMsg,
+        message: message
+    });
+};
+
+//Validates user input to display error only when needed
+const inputValidation = () => {
+    const valid = addressInput.value;
+    const isValid = addressExist(valid, addresses);
+    if(!isValid || !valid.trim()){
+        return false
+    } else return true
+};
+
 //Show the result
 const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if(!inputValidation()) {
-            error.showError();
+            executeError('Please enter a valid address');
             hideElement(displayResult);
             hideElement(suggestions);
             return;
@@ -65,6 +82,7 @@ const searchEvent = () => {
         resultHandler();
     });
 };
+
 
 //Push the results to displayResult
 const resultHandler = () => {
@@ -82,15 +100,6 @@ const resultHandler = () => {
     `
 };
 
-//Validates user input to display error only when needed
-const inputValidation = () => {
-    const valid = addressInput.value;
-    const isValid = addressExist(valid, addresses);
-    if(!isValid || !valid.trim()){
-        return false
-    } else return true
-};
-
 //Hide element
 const hideElement = (element) => {
      element.classList.add('hidden')
@@ -101,18 +110,6 @@ const showElement = (element) => {
      element.classList.remove('hidden')
 };
 
-//Shows error message on screen
-/*const showError = (message) => {
-    errorMsg.innerHTML =`
-    <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>
-    ${message}`;
-    showElement(errorMsg)
-}*/
-
-export const error = new ErrorMessage({
-    displayError: errorMsg,
-    message: 'Please enter a valid address'
-});
 
 const runProgram = () => {
     //suggestAddress();
@@ -124,3 +121,5 @@ const runProgram = () => {
 runProgram()
 
 export const initautoComplete = executeAutoComplete()//exports autocomplete to access it inside clear btn
+
+export const error = executeError()//exports error to access it inside clearBtn and autoComplete
