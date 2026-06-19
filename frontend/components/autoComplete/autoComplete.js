@@ -1,15 +1,18 @@
 export class AutoComplete {
-    constructor({input, database, display}){
+    constructor({input, database, display, error}){
         this.input = input,
         this.database = database,
         this.display = display
-        this.isOpen = false
     };
     
 
     init() {
         this.runMatches();
     };
+
+    clearError() {
+        this.error.classList.add('hidden')
+    }
 
     clear() {
         this.display.classList.add('hidden');
@@ -45,7 +48,6 @@ export class AutoComplete {
                 this.input.value = li.textContent;
                 this.clear();
                 this.input.focus();
-                this.isOpen = false;
             })
         })
     };
@@ -58,6 +60,7 @@ export class AutoComplete {
                 this.clear();
                 return;
             }
+            this.clearError();
             this.display.innerHTML = '';
             this.listMatches();
         })

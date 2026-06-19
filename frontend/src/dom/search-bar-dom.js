@@ -30,7 +30,8 @@ const executeAutoComplete = () => {
         input: addressInput,
         database: addresses,
         display: suggestions,
-    })
+        error: errorMsg
+    });
     initAutoComplete.init();
     return initAutoComplete;
 };
@@ -79,7 +80,6 @@ const resultHandler = () => {
 };
 
 //Validates user input to display error only when needed
-// //Will rework on it once Google Maps API is added 
 const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
