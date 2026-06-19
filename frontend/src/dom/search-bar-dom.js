@@ -31,7 +31,7 @@ const executeAutoComplete = () => {
         database: addresses,
         display: suggestions,
         error: errorMsg
-    });
+    })
     initAutoComplete.init();
     return initAutoComplete;
 };

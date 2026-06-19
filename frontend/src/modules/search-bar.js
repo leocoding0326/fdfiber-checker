@@ -21,7 +21,7 @@ const userInputHandler = (user, addresses) => {
 
 const addressExist = (input, database) => {
     return database.some(profile => profile.address.toLowerCase() === input.toLowerCase());
-}; 
+};
 
-export { userInputHandler, addressExist};
+export { userInputHandler, addressExist };
 

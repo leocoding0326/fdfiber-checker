@@ -1,4 +1,4 @@
-class ErrorMessage {
+export class ErrorMessage {
     constructor({
         displayError,
         message,
@@ -10,9 +10,13 @@ class ErrorMessage {
         this.message = message;
         this.input = input;
         this.database = database;
-        this.isValid = true;
+        this.isValid = false;
         this.key = key
     };
+
+    init() {
+        this.executeError();
+    }
 
     inputExist() {
         return this.database.some(profile => profile[this.key]?.toLowerCase() === this.input.value.toLowerCase());

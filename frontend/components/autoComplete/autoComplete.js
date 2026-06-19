@@ -10,10 +10,7 @@ export class AutoComplete {
         this.runMatches();
     };
 
-    clearError() {
-        this.error.classList.add('hidden')
-    }
-
+    
     clear() {
         this.display.classList.add('hidden');
     };
@@ -60,7 +57,6 @@ export class AutoComplete {
                 this.clear();
                 return;
             }
-            this.clearError();
             this.display.innerHTML = '';
             this.listMatches();
         })
