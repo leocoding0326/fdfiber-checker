@@ -55,6 +55,8 @@ const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if(!inputValidation()) {
+            error.showError();
+            console.log(error)
             return;
         }
         hideElement(suggestions);
@@ -68,7 +70,6 @@ const resultHandler = () => {
     const addressString = addressInput.value;
     const result = userInputHandler(addressString, addresses);
     if (!result.length) {
-        error.showError();
         return;
     }
     displayResult.innerHTML = `
@@ -116,9 +117,6 @@ export const error = new ErrorMessage({
     displayError: errorMsg,
     message: 'Please enter a valid address'
 });
-
-console.log(error)
-console.log(error.showError())
 
 const runProgram = () => {
     //suggestAddress();
