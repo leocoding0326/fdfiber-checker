@@ -55,8 +55,13 @@ const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if(!inputValidation()) {
+            console.log(inputValidation())
             error.showError();
             console.log(error)
+            displayResult.innerHTML = '';
+            addressInput.value = '';
+            hideElement(displayResult);
+            hideElement(suggestions);
             return;
         }
         hideElement(suggestions);
@@ -86,11 +91,6 @@ const inputValidation = () => {
     const valid = addressInput.value;
     const isValid = addressExist(valid, addresses);
     if(!isValid || !valid.trim()){
-        displayResult.innerHTML = '';
-        addressInput.value = '';
-        hideElement(displayResult);
-        hideElement(suggestions);
-        error.showError();
         return false
     } else return true
 };
