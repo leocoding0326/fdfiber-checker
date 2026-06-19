@@ -15,6 +15,7 @@ import {addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
 import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
 import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
+import { ErrorMessage } from '../../components/errorMessage/error.js';
 
 const addressInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
@@ -67,7 +68,7 @@ const resultHandler = () => {
     const addressString = addressInput.value;
     const result = userInputHandler(addressString, addresses);
     if (!result.length) {
-        showError('Address Not Fund')
+        error.showError();
         return;
     }
     displayResult.innerHTML = `
@@ -88,7 +89,7 @@ const inputValidation = () => {
         addressInput.value = '';
         hideElement(displayResult);
         hideElement(suggestions);
-        showError('Please enter a valid address');
+        error.showError();
         return false
     } else return true
 };
@@ -104,13 +105,20 @@ const showElement = (element) => {
 };
 
 //Shows error message on screen
-const showError = (message) => {
+/*const showError = (message) => {
     errorMsg.innerHTML =`
     <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>
     ${message}`;
     showElement(errorMsg)
-}
+}*/
 
+export const error = new ErrorMessage({
+    displayError: errorMsg,
+    message: 'Please enter a valid address'
+});
+
+console.log(error)
+console.log(error.showError())
 
 const runProgram = () => {
     //suggestAddress();

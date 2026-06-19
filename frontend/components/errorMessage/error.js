@@ -7,9 +7,10 @@ export class ErrorMessage {
         this.message = message;
     };
     
-    executeError() {
+    showError() {
         this.displayError.hidden = false;
-        this.displayError.innerHTML = this.message;
+        this.displayError.innerHTML = `
+            <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>` + this.message;
     };
 
     hideError() {
