@@ -26,6 +26,7 @@ export class ClearBtn {
             this.hide(this.response);
             this.error.hidden = true;
             this.input.focus();
+            this.input.classList.remove('input-error')
             this.hide(this.btn);
             initAutoComplete.clear();
         });

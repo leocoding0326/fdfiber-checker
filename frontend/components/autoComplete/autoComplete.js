@@ -54,6 +54,7 @@ export class AutoComplete {
         this.input.addEventListener('input', (event) => {
             const userInput = event.target.value;
             this.error.hidden = true;
+            this.input.classList.remove('input-error')
             if(!userInput.trim()) {
                 this.display.innerHTML = '';
                 this.clear();

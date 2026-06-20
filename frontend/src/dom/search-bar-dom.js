@@ -54,10 +54,12 @@ const executeClearBtn = () => {
 const executeError = (errorText) => {
         const error = new ErrorMessage({
         displayError: errorMsg,
-        message: errorText
+        message: errorText,
+        input: addressInput
     });
         error.showError();
 };
+
 
 //Validates user input to display error only when needed
 const inputValidation = () => {
