@@ -13,9 +13,9 @@ Software Algorithm:
 
 import {addressExist, userInputHandler} from '../modules/search-bar.js'
 import addresses from '../modules/database.js';
-import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
-import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
-import { ErrorMessage } from '../../components/errorMessage/error.js';
+import { ClearBtn } from '../../components/searchBar/clearBtn/clearBtn.js';
+import { AutoComplete } from '../../components/searchBar/autoComplete/autoComplete.js';
+import { ErrorMessage } from '../../components/searchBar/errorMessage/error.js';
 import { showElement, hideElement } from '../../utilities/showHide.js';
 
 const userInput = document.getElementById('address-input');//Search Bar
