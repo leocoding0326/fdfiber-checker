@@ -59,6 +59,16 @@ const executeError = (errorText) => {
         error.showError();
 };
 
+//Validates user input to display error only when needed
+const inputValidation = () => {
+    const valid = addressInput.value;
+    const isValid = addressExist(valid, addresses);
+    if(!isValid || !valid.trim()){
+        return false
+    } else return true
+};
+
+
 //Show the result
 const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
@@ -73,15 +83,6 @@ const searchEvent = () => {
         showElement(displayResult);
         resultHandler();
     });
-};
-
-//Validates user input to display error only when needed
-const inputValidation = () => {
-    const valid = addressInput.value;
-    const isValid = addressExist(valid, addresses);
-    if(!isValid || !valid.trim()){
-        return false
-    } else return true
 };
 
 //Push the results to displayResult
@@ -110,14 +111,13 @@ const showElement = (element) => {
      element.classList.remove('hidden')
 };
 
+const initAutoComplete = executeAutoComplete();
 
 const runProgram = () => {
-    //suggestAddress();
-    executeAutoComplete();
     executeClearBtn();
     searchEvent();
 }
 
 runProgram()
 
-export const initautoComplete = executeAutoComplete()//exports autocomplete to access it inside clear btn
+export {initAutoComplete} //exports autocomplete to access it inside clear btn

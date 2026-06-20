@@ -1,4 +1,4 @@
-import { initautoComplete } from "../../src/dom/search-bar-dom.js";
+import { initAutoComplete } from "../../src/dom/search-bar-dom.js";
 
 
 export class ClearBtn {
@@ -27,7 +27,7 @@ export class ClearBtn {
             this.error.hidden = true;
             this.input.focus();
             this.hide(this.btn);
-            initautoComplete.clear()
+            initAutoComplete.clear();
         });
     }
     init() {

@@ -17,8 +17,9 @@ const userInputHandler = (user, addresses) => {
         user.toLowerCase() === currentAddress.address.toLowerCase());
 };
 
-//Check if there is a matching address
 
+
+//Check if there is a matching address and return a bolean
 const addressExist = (input, database) => {
     return database.some(profile => profile.address.toLowerCase() === input.toLowerCase());
 };
