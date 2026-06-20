@@ -1,4 +1,4 @@
-import { initAutoComplete } from "../../src/dom/search-bar-dom.js";
+import { initAutoComplete } from "../../src/dom/searchBarDom.js";
 
 
 export class ClearBtn {
