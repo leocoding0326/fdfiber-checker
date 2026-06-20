@@ -17,7 +17,7 @@ import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
 import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
 import { ErrorMessage } from '../../components/errorMessage/error.js';
 
-const addressInput = document.getElementById('address-input');//Search Bar
+const userInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
 const clearBtn = document.querySelector('.clear-btn');//clear btn element
 const searchBtn = document.querySelector('.search-btn');//Search Button element
@@ -28,7 +28,7 @@ const searchForm = document.getElementById('search-bar')
 //executes automplete
 const executeAutoComplete = () => {
     const initAutoComplete = new AutoComplete({
-        input: addressInput,
+        input: userInput,
         database: addresses,
         display: suggestions,
         error: errorMsg
@@ -41,7 +41,7 @@ const executeAutoComplete = () => {
 //Exectues Clear Button
 const executeClearBtn = () => {
     const initClearBtn = new ClearBtn ({
-        input: addressInput,
+        input: userInput,
         btn: clearBtn,
         response: displayResult,
         error: errorMsg,
@@ -55,7 +55,7 @@ const executeError = (errorText) => {
         const error = new ErrorMessage({
         displayError: errorMsg,
         message: errorText,
-        input: addressInput
+        input: userInput
     });
         error.showError();
 };
@@ -63,7 +63,7 @@ const executeError = (errorText) => {
 
 //Validates user input to display error only when needed
 const inputValidation = () => {
-    const valid = addressInput.value;
+    const valid = userInput.value;
     const isValid = addressExist(valid, addresses);
     if(!isValid || !valid.trim()){
         return false
@@ -89,7 +89,7 @@ const searchEvent = () => {
 
 //Push the results to displayResult
 const resultHandler = () => {
-    const addressString = addressInput.value;
+    const addressString = userInput.value;
     const result = userInputHandler(addressString, addresses);
     if (!result.length) {
         return;
