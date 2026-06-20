@@ -10,7 +10,7 @@ export class ErrorMessage {
     showError() {
         this.displayError.hidden = false;
         this.displayError.innerHTML = `
-            <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>` + this.message;
+            <i class="fa-solid fa-circle-exclamation" style="color: #e33f27;"></i>` + ' ' + this.message;
     };
 
     hideError() {
