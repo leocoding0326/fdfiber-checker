@@ -13,11 +13,11 @@ export class AutoComplete {
 
     
     clear() {
-        this.display.classList.add('hidden');
+        this.display.hidden = true;
     };
 
     show() {
-        this.display.classList.remove('hidden')
+        this.display.hidden = false;
     };
 
     findMatches() {

@@ -16,6 +16,7 @@ import addresses from '../modules/database.js';
 import { ClearBtn } from '../../components/clearBtn/clearBtn.js';
 import { AutoComplete } from '../../components/autoComplete/autoComplete.js';
 import { ErrorMessage } from '../../components/errorMessage/error.js';
+import { showElement, hideElement } from '../../utilities/showHide.js';
 
 const userInput = document.getElementById('address-input');//Search Bar
 const suggestions = document.getElementById('suggestions');//ul under search bar
@@ -71,7 +72,7 @@ const inputValidation = () => {
 };
 
 
-//Show the result
+//execute search
 const searchEvent = () => {
     searchForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -87,7 +88,7 @@ const searchEvent = () => {
     });
 };
 
-//Push the results to displayResult
+//Push the search to displayResult
 const resultHandler = () => {
     const addressString = userInput.value;
     const result = userInputHandler(addressString, addresses);
@@ -101,16 +102,6 @@ const resultHandler = () => {
     <p>MST: ${result[0].mstId}</p>
     <p>MST Connection: ${result[0].mstConnection}</p>
     `
-};
-
-//Hide element
-const hideElement = (element) => {
-     element.classList.add('hidden')
-};
-
-//Show element
-const showElement = (element) => {
-     element.classList.remove('hidden')
 };
 
 const initAutoComplete = executeAutoComplete();
