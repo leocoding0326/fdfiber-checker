@@ -1,10 +1,12 @@
 export class ErrorMessage {
     constructor({
         displayError,
-        message
+        message,
+        display,
     }) {
         this.displayError = displayError;
         this.message = message;
+        this.display = display;
     };
     
     showError() {
