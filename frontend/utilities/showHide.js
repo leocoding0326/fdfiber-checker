@@ -3,3 +3,5 @@
 const showElement = element => element.hidden = false;
 
 const hideElement = element => element.hidden = true;
+
+export {showElement, hideElement};
